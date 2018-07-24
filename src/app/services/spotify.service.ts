@@ -1,3 +1,4 @@
+import { map } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -13,14 +14,20 @@ export class SpotifyService {
       'Authorization': 'Bearer BQAiW-6Ce7IwFJv-LjaLfeglALBQq2WdZli1Yf2iIABta8RQYzTYYT-IHSM-jced5aSxVQM8kZ-eXv2jPWs'
     });
 
-    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers: headers });
+    return this.http.get('https://api.spotify.com/v1/browse/new-releases?limit=20', { headers: headers })
+    .pipe( map ( data => {
+      return data['albums'].items;
+    } ) );
   }
 
   getArtistas(termino: string) {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer BQAiW-6Ce7IwFJv-LjaLfeglALBQq2WdZli1Yf2iIABta8RQYzTYYT-IHSM-jced5aSxVQM8kZ-eXv2jPWs'
     });
-    return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers: headers });
+    return this.http.get(`https://api.spotify.com/v1/search?q=${ termino }&type=artist&limit=15`, { headers: headers })
+    .pipe( map (data => {
+      return data['artists'].items;
+    } ) );
   }
 
 }
