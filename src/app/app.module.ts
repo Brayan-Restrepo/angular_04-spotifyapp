@@ -13,13 +13,17 @@ import { RouterModule } from '@angular/router';
 // Import rutas
 import { ROUTES } from './app.routes';
 
+// Pipes
+import { NoimagePipe } from './pipes/noimage.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe
   ],
   imports: [
     BrowserModule,
