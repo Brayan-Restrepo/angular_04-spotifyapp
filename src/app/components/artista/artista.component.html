@@ -14,3 +14,30 @@
         <button routerLink='/search' class="btn btn-outline-danger">Regresar</button>
     </div>
 </div>
+
+<div class="row m-5">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Foto</th>
+                    <th>Album</th>
+                    <th>Cancion</th>
+                    <th>Vista previa</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let topTrack of topTracks">
+                    <td>
+                        <img [src]="topTrack.album.images | noimage" alt="{{ topTrack.album.name }}" class="img-thumb">
+                    </td>
+                    <td>{{ topTrack.album.name }}</td>
+                    <td>{{ topTrack.name }}</td>
+                    <td>
+                        <audio [src]="topTrack.preview_url" controls></audio>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
