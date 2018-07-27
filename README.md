@@ -1,3 +1,12 @@
+
+#Aplicacion
+![Alt text](https://raw.githubusercontent.com/Brayan-Restrepo/angular_04-spotifyapp/master/Screenshot_2018-07-26%20AppAngularBase(1).png)
+
+![Alt text](https://raw.githubusercontent.com/Brayan-Restrepo/angular_04-spotifyapp/master/Screenshot_2018-07-26%20AppAngularBase(2).png)
+
+![Alt text](https://raw.githubusercontent.com/Brayan-Restrepo/angular_04-spotifyapp/master/Screenshot_2018-07-26%20AppAngularBase(3).png)
+
+
 # AppAngularBase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
